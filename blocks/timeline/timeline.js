@@ -1,4 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
  * Timeline block.
@@ -33,6 +34,7 @@ export default function decorate(block) {
 
     const li = document.createElement('li');
     li.className = 'timeline-item';
+    moveInstrumentation(row, li);
 
     // Year badge on the spine.
     const year = document.createElement('div');

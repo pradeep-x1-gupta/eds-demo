@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-quicklinks",
+    "components": [
+      "quicklink"
+    ]
+  },
+  {
+    "id": "cards-news-list",
+    "components": [
+      "news-list-item"
+    ]
+  },
+  {
+    "id": "cards-news",
+    "components": [
+      "news-item"
+    ]
+  },
+  {
+    "id": "timeline",
+    "components": [
+      "milestone"
+    ]
+  }
+]
