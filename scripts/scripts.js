@@ -306,4 +306,14 @@ async function loadPage() {
   loadDelayed();
 }
 
+// Load Universal Editor support only when the page is opened in the DA editor
+// host (e.g. *.ue.da.live / *.stage-ue.da.live). Keeps UE code out of the
+// production delivery path entirely.
+if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
+  await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`)
+    .then(({ default: ue }) => ue())
+    // eslint-disable-next-line no-console
+    .catch((error) => console.error('Universal Editor support failed to load', error));
+}
+
 loadPage();
