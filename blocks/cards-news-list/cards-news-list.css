@@ -1,0 +1,88 @@
+/* cards-news-list — KP dense news grid (.c04-filtered-card-grid)
+   Also reused for the article "Related" slider (.c28-related-card-grid).
+   Values extracted from source computed styles. */
+
+.cards-news-list > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.cards-news-list > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+}
+
+.cards-news-list .cards-news-list-card-image {
+  line-height: 0;
+}
+
+.cards-news-list .cards-news-list-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.cards-news-list .cards-news-list-card-body {
+  flex: 1;
+  padding: 18px;
+}
+
+.cards-news-list .cards-news-list-card-body p {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #757575;
+}
+
+/* first line of the card body reads as a date eyebrow */
+.cards-news-list .cards-news-list-card-body > p:first-child {
+  margin: 0 0 5px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.5px;
+  color: #757575;
+}
+
+.cards-news-list .cards-news-list-card-body h2,
+.cards-news-list .cards-news-list-card-body h3,
+.cards-news-list .cards-news-list-card-body h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.18px;
+  color: var(--kp-navy);
+}
+
+.cards-news-list .cards-news-list-card-body h2 a,
+.cards-news-list .cards-news-list-card-body h3 a,
+.cards-news-list .cards-news-list-card-body h4 a {
+  color: var(--kp-navy);
+  text-decoration: none;
+}
+
+.cards-news-list .cards-news-list-card-body h2 a:hover,
+.cards-news-list .cards-news-list-card-body h3 a:hover,
+.cards-news-list .cards-news-list-card-body h4 a:hover {
+  color: var(--kp-blue);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-news-list > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-news-list > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

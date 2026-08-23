@@ -1,0 +1,94 @@
+/*
+ * cards-quicklinks — Kaiser Permanente 3-up quick-links tile grid
+ * Source: about.kaiserpermanente.org homepage (.c06-content-tile trio)
+ * Large equal clickable tiles: solid brand-color background, white title
+ * overlay (top-left) and an arrow affordance (bottom-right).
+ * Values extracted from source computed styles.
+ */
+
+.cards-quicklinks > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* the empty authored image cell — no picture was authored, so drop it */
+.cards-quicklinks .cards-quicklinks-card-body:empty {
+  display: none;
+}
+
+/* each tile */
+.cards-quicklinks > ul > li {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  padding: 31px;
+  overflow: hidden;
+  background-color: var(--kp-blue-deep);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* solid brand-color rotation matching the KP tile sequence */
+.cards-quicklinks > ul > li:nth-child(3n + 1) {
+  background-color: #583985; /* dark violet */
+}
+
+.cards-quicklinks > ul > li:nth-child(3n + 2) {
+  background-color: var(--kp-blue-bright); /* #0078b3 */
+}
+
+.cards-quicklinks > ul > li:nth-child(3n) {
+  background-color: var(--kp-blue-deep); /* #003b71 */
+}
+
+/* title */
+.cards-quicklinks > ul > li h3 {
+  margin: 0;
+  color: #fff;
+  font-size: var(--heading-font-size-l); /* 26px desktop */
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* whole tile is clickable — stretch the link over the tile */
+.cards-quicklinks > ul > li a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards-quicklinks > ul > li a:any-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* arrow affordance bottom-right */
+.cards-quicklinks > ul > li::after {
+  content: "→";
+  position: absolute;
+  right: 31px;
+  bottom: 24px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.cards-quicklinks > ul > li:hover::after,
+.cards-quicklinks > ul > li:focus-within::after {
+  transform: translateX(6px);
+}
+
+@media (width >= 900px) {
+  .cards-quicklinks > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

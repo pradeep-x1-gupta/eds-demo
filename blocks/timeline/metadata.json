@@ -1,0 +1,43 @@
+{
+  "variantName": "timeline",
+  "baseBlock": "timeline",
+  "version": "1.0.0",
+  "created": "2026-08-23T12:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/who-we-are/our-people/milestones-in-nursing-history",
+    "originPage": "Milestones in nursing history / timeline template",
+    "blockPosition": "middle",
+    "sourceComponent": "c36-timeline-container / c36b-timeline-milestone"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "timeline",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "per milestone: year badge + image + heading + description; central vertical spine, chronological order",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "chronological histories (year + title + description + image)",
+      "company/organization milestone timelines",
+      "KP c36-timeline-container sections",
+      "any date-ordered sequence of events with optional imagery"
+    ],
+    "notSuitableFor": [
+      "non-chronological repeating card grids (use cards-news / cards-quicklinks)",
+      "side-by-side comparison layouts (use columns)",
+      "single feature callouts (use columns-media-copy)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/who-we-are/our-people/milestones-in-nursing-history"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-23T12:10:00.000Z"
+  }
+}

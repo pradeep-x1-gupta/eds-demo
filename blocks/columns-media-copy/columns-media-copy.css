@@ -1,0 +1,104 @@
+/*
+ * columns-media-copy — KP "Annual Report" horizontal media-with-copy callout.
+ * Side-by-side copy (left) + image (right), vertically centered, on a grey band.
+ * Values extracted from source computed styles (about.kaiserpermanente.org).
+ */
+
+/* Vertical rhythm of the band. The grey background comes from the section
+   style (.section.grey in styles.css); the block only owns its own padding. */
+.columns-media-copy {
+  padding: 24px 0;
+  color: var(--kp-navy);
+}
+
+/* Row: image and copy stack on mobile (image first). */
+.columns-media-copy > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Copy cell */
+.columns-media-copy > div > div {
+  order: 1;
+}
+
+.columns-media-copy h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: var(--kp-navy);
+}
+
+.columns-media-copy p {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--kp-navy);
+}
+
+/* Image cell (picture is the only content — flagged by the block JS). */
+.columns-media-copy > div > .columns-media-copy-img-col {
+  order: 0;
+  margin: 0;
+}
+
+.columns-media-copy > div > .columns-media-copy-img-col a,
+.columns-media-copy > div > .columns-media-copy-img-col picture {
+  display: block;
+}
+
+/* CTA — outlined square "button" (plain link in the copy cell, not the image link). */
+.columns-media-copy > div > div:not(.columns-media-copy-img-col) a:any-link {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 11px 24px;
+  border: 1px solid var(--kp-blue-bright);
+  border-radius: 0;
+  background: transparent;
+  color: var(--kp-blue);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.columns-media-copy > div > div:not(.columns-media-copy-img-col) a:any-link:hover {
+  background: var(--kp-blue-bright);
+  color: #fff;
+  text-decoration: none;
+}
+
+.columns-media-copy img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  /* Source band is ~75px top/bottom; the section.grey style already adds 48px,
+     so the block contributes the remainder. */
+  .columns-media-copy {
+    padding: 27px 0;
+  }
+
+  /* Copy on the left (with a left indent), image flush right, centered vertically.
+     Proportions mirror source: ~9% left space, ~33% copy, ~10% gap, ~48% image. */
+  .columns-media-copy > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    padding-left: 9%;
+  }
+
+  .columns-media-copy > div > div {
+    order: unset;
+    flex: 0 1 33%;
+  }
+
+  .columns-media-copy > div > .columns-media-copy-img-col {
+    flex: 0 1 48%;
+  }
+}

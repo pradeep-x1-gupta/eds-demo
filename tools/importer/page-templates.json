@@ -1,0 +1,474 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "landing-hub",
+      "urls": [
+        "https://about.kaiserpermanente.org/"
+      ],
+      "coverageGaps": [],
+      "description": "Homepage / hub: alert popup, hero mosaic (horizontal-media-with-copy), featured news column-controls and card groups.",
+      "blocks": [
+        {
+          "name": "cards-news",
+          "instances": [
+            ".c05-column-control:has(.c08-feature)"
+          ]
+        },
+        {
+          "name": "columns-media-copy",
+          "instances": [
+            ".c13-horizontal-media-with-copy"
+          ],
+          "section": "grey"
+        },
+        {
+          "name": "cards-quicklinks",
+          "instances": [
+            ".c05-column-control:not(:has(.c08-feature))"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-2",
+          "name": "section-news-mosaic",
+          "selector": ".c05-column-control:has(.c08-feature)",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "section-annual-report-callout",
+          "selector": ".c13-horizontal-media-with-copy",
+          "style": "grey",
+          "blocks": [
+            "columns-media-copy"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "section-quicklinks",
+          "selector": ".c05-column-control:not(:has(.c08-feature))",
+          "style": null,
+          "blocks": [
+            "cards-quicklinks"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "section-landing",
+      "urls": [
+        "https://about.kaiserpermanente.org/news"
+      ],
+      "coverageGaps": [],
+      "description": "Top-level section landing: breadcrumb, page hero title band, and column-control content groups (news/who-we-are/expertise landing pages).",
+      "blocks": [
+        {
+          "name": "cards-news",
+          "instances": [
+            ".c05-column-control:has(.c08-feature)"
+          ]
+        },
+        {
+          "name": "cards-news-list",
+          "instances": [
+            ".c04-filtered-card-grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero-title",
+          "selector": ".c14-page-hero",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "section-promo-mosaic",
+          "selector": ".c05-column-control:has(.c08-feature)",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "section-news-grid",
+          "selector": ".c04-filtered-card-grid",
+          "style": null,
+          "blocks": [
+            "cards-news-list"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "content-with-media",
+      "urls": [
+        "https://about.kaiserpermanente.org/who-we-are/our-history"
+      ],
+      "coverageGaps": [],
+      "description": "Interior content page: page hero + alternating horizontal-media-with-copy and column-control content blocks.",
+      "blocks": [
+        {
+          "name": "columns-media-copy",
+          "instances": [
+            ".c13-horizontal-media-with-copy"
+          ]
+        },
+        {
+          "name": "cards-quicklinks",
+          "instances": [
+            ".c05-column-control:has(.c06-content-tile):not(:has(.c04-filtered-card-grid))"
+          ]
+        },
+        {
+          "name": "cards-news-list",
+          "instances": [
+            ".c05-column-control:has(.c04-filtered-card-grid)"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero-title",
+          "selector": ".c14-page-hero",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "section-history-band-1",
+          "selector": ".c13-horizontal-media-with-copy",
+          "style": null,
+          "blocks": [
+            "columns-media-copy"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "section-history-tiles",
+          "selector": ".c05-column-control:has(.c06-content-tile):not(:has(.c04-filtered-card-grid))",
+          "style": null,
+          "blocks": [
+            "cards-quicklinks"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "section-history-grid",
+          "selector": ".c05-column-control:has(.c04-filtered-card-grid)",
+          "style": null,
+          "blocks": [
+            "cards-news-list"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "content-simple",
+      "urls": [
+        "https://about.kaiserpermanente.org/who-we-are/labor-relations"
+      ],
+      "coverageGaps": [],
+      "description": "Simple interior content page: breadcrumb, page hero, single column-control content region.",
+      "blocks": [
+        {
+          "name": "cards-news",
+          "instances": [
+            ".c05-column-control"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero-title",
+          "selector": ".c14-page-hero",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "section-labor-mosaic",
+          "selector": ".c05-column-control",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "article",
+      "urls": [
+        "https://about.kaiserpermanente.org/news/medical-school-milestone"
+      ],
+      "coverageGaps": [],
+      "description": "News/article page: breadcrumb, article page hero (date/title/hero image), column-control body, related-card-grid at bottom.",
+      "blocks": [
+        {
+          "name": "hero-article",
+          "instances": [
+            ".c27-article-page-hero"
+          ]
+        },
+        {
+          "name": "cards-news-list",
+          "instances": [
+            ".c28-related-card-grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-article-hero",
+          "selector": ".c27-article-page-hero",
+          "style": null,
+          "blocks": [
+            "hero-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "section-article-body",
+          "selector": ".c05-column-control:has(.c07-text)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c05-column-control:has(.c07-text)"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "section-related",
+          "selector": ".c28-related-card-grid",
+          "style": "light-grey",
+          "blocks": [
+            "cards-news-list"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "leadership-bio",
+      "urls": [
+        "https://about.kaiserpermanente.org/who-we-are/leadership-team/greg-a-adams"
+      ],
+      "coverageGaps": [],
+      "description": "Leadership bio: breadcrumb then two column-control regions (name/title + headshot and bio body). No page hero band.",
+      "blocks": [
+        {
+          "name": "columns-bio",
+          "instances": [
+            ".c05-column-control:has(.c31-leadership-bio)"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-bio-header",
+          "selector": ".c05-column-control:has(.c31-leadership-bio)",
+          "style": "grey",
+          "blocks": [
+            "columns-bio"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "section-bio-body",
+          "selector": ".c05-column-control:has(.c07-text)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c05-column-control:has(.c07-text)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "card-grid-landing",
+      "urls": [
+        "https://about.kaiserpermanente.org/expertise-and-impact/public-policy/our-impact"
+      ],
+      "coverageGaps": [],
+      "description": "Landing page ending in a related-card-grid or feature-tile grid of subsection cards.",
+      "blocks": [
+        {
+          "name": "cards-news-list",
+          "instances": [
+            ".c28-related-card-grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero-title",
+          "selector": ".c14-page-hero",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "section-intro-body",
+          "selector": ".c05-column-control",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c05-column-control"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "section-related-grid",
+          "selector": ".c28-related-card-grid",
+          "style": null,
+          "blocks": [
+            "cards-news-list"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "annual-report",
+      "urls": [
+        "https://about.kaiserpermanente.org/expertise-and-impact/annual-reports/2024-annual-report"
+      ],
+      "coverageGaps": [],
+      "description": "Rich annual-report page: page hero plus many html-embed, horizontal-media-with-copy, and timeline-container sections.",
+      "blocks": [
+        {
+          "name": "columns-media-copy",
+          "instances": [
+            ".c13-horizontal-media-with-copy"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero",
+          "selector": ".c14-page-hero",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "report-summary",
+      "urls": [
+        "https://about.kaiserpermanente.org/expertise-and-impact/annual-reports/2024-annual-report/2024-year-in-summary"
+      ],
+      "coverageGaps": [],
+      "description": "Report sub-page: article page hero, column-control body, and html-embed data visualization.",
+      "blocks": [
+        {
+          "name": "hero-article",
+          "instances": [
+            ".c27-article-page-hero"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-article-hero",
+          "selector": ".c27-article-page-hero",
+          "style": null,
+          "blocks": [
+            "hero-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "section-report-body",
+          "selector": ".c05-column-control",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c05-column-control"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "urls": [
+        "https://about.kaiserpermanente.org/who-we-are/our-people/milestones-in-nursing-history"
+      ],
+      "coverageGaps": [],
+      "description": "Timeline page: breadcrumb, page hero, and a full-page timeline-container of chronological milestones.",
+      "blocks": [
+        {
+          "name": "timeline",
+          "instances": [
+            ".c36-timeline-container"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "section-hero-title",
+          "selector": ".c14-page-hero",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".c14-page-hero"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "section-timeline",
+          "selector": ".c36-timeline-container",
+          "style": null,
+          "blocks": [
+            "timeline"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

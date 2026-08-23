@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://about.kaiserpermanente.org/news/medical-school-milestone",
+  "path": "news/medical-school-milestone",
+  "timestamp": "2026-08-23T10:56:27.582Z",
+  "title": "Medical School Milestone | Kaiser Permanente",
+  "template": "article",
+  "blocks": [
+    "hero-article",
+    "cards-news-list"
+  ]
+}

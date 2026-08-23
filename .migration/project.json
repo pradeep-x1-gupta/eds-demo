@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "eds-demo": {
+      "previewOrg": "pradeep-x1-gupta",
+      "previewSite": "eds-demo",
+      "contentHostUrl": "https://content.da.live/pradeep-x1-gupta/eds-demo/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

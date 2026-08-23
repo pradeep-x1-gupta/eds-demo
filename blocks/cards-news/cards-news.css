@@ -1,0 +1,210 @@
+/* cards-news — homepage news mosaic (KP c05-column-control) */
+
+/* ---- layout ---- */
+.cards-news {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* left column: two colored photo tiles */
+.cards-news .cards-news-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ---- colored tiles ---- */
+.cards-news .cards-news-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1 / 1;
+  padding: 31px;
+  background-color: rgb(74 118 40); /* dark green tile (KP) */
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards-news .cards-news-tile:nth-child(2n) {
+  background-color: var(--kp-blue-bright); /* #0078b3 medium blue */
+}
+
+.cards-news .cards-news-tile:hover {
+  text-decoration: none;
+}
+
+.cards-news .cards-news-tile-title {
+  font-family: var(--heading-font-family);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #fff;
+}
+
+.cards-news .cards-news-tile::after {
+  content: "→";
+  position: absolute;
+  right: 31px;
+  bottom: 24px;
+  font-size: 22px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* ---- large feature ---- */
+.cards-news .cards-news-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 320px;
+  padding: 30px;
+  background-color: var(--kp-navy);
+  color: #fff;
+}
+
+.cards-news .cards-news-feature h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #fff;
+}
+
+.cards-news .cards-news-feature p {
+  max-width: 430px;
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.cards-news .cards-news-cta {
+  align-self: flex-start;
+  margin-top: 30px;
+  border: 1px solid rgb(0 116 173);
+  padding: 11px 24px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards-news .cards-news-cta:hover {
+  background-color: rgb(0 116 173);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---- dated news list ---- */
+.cards-news .cards-news-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-news .cards-news-item {
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+  padding: 12px 34px 12px 12px;
+  color: var(--kp-navy);
+  text-decoration: none;
+}
+
+.cards-news .cards-news-date {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--kp-navy);
+}
+
+.cards-news .cards-news-title {
+  display: block;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--kp-navy);
+}
+
+.cards-news .cards-news-item:hover {
+  text-decoration: none;
+}
+
+.cards-news .cards-news-item:hover .cards-news-title {
+  text-decoration: underline;
+}
+
+.cards-news .cards-news-item::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  line-height: 1;
+  color: rgb(0 116 173);
+}
+
+/* ---- link-list groups (regional bargaining lists etc.) ---- */
+.cards-news .cards-news-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-news .cards-news-links-headline {
+  margin: 0 0 8px;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kp-navy);
+}
+
+.cards-news .cards-news-links ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.cards-news .cards-news-links li {
+  margin-bottom: 8px;
+}
+
+.cards-news .cards-news-links a {
+  color: var(--kp-blue);
+  text-decoration: none;
+}
+
+.cards-news .cards-news-links a:hover {
+  color: var(--kp-blue-deep);
+  text-decoration: underline;
+}
+
+/* ---- desktop mosaic ---- */
+@media (width >= 900px) {
+  .cards-news {
+    display: grid;
+    grid-template-columns: 288px 1fr 288px;
+    gap: 30px;
+    align-items: stretch;
+  }
+
+  /* Adapt columns to the groups actually present so no empty column is
+     reserved. Full mosaic = tiles + feature + list (3 cols). When the dated
+     list is absent (e.g. section-landing promo row), drop to tiles + feature. */
+  .cards-news:not(:has(.cards-news-list)) {
+    grid-template-columns: 288px 1fr;
+  }
+
+  .cards-news:not(:has(.cards-news-tiles), :has(.cards-news-list)) {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-news .cards-news-feature {
+    min-height: 100%;
+  }
+}

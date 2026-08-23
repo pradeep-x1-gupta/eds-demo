@@ -115,8 +115,13 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
+  let fragment = await loadFragment(navPath);
+  // fallback for local dev where content is served under /content
+  if (!fragment && navPath !== '/content/nav') {
+    fragment = await loadFragment('/content/nav');
+  }
+  if (!fragment) return;
 
   // decorate nav DOM
   block.textContent = '';
@@ -149,6 +154,26 @@ export default async function decorate(block) {
         }
       });
     });
+  }
+
+  // build search box from a :search: placeholder in the tools section
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const searchMarker = [...navTools.querySelectorAll('p, li')]
+      .find((el) => el.textContent.trim() === ':search:');
+    if (searchMarker) {
+      const search = document.createElement('div');
+      search.className = 'nav-search';
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.setAttribute('aria-label', 'About KP');
+      input.placeholder = 'About KP';
+      const btn = document.createElement('button');
+      btn.type = 'submit';
+      btn.textContent = 'Search';
+      search.append(input, btn);
+      searchMarker.replaceWith(search);
+    }
   }
 
   // hamburger for mobile

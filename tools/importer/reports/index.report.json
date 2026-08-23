@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://about.kaiserpermanente.org/",
+  "path": "index",
+  "timestamp": "2026-08-23T09:30:31.991Z",
+  "title": "We’re transforming health and health care – find out how | Kaiser Permanente",
+  "template": "landing-hub",
+  "blocks": [
+    "cards-news",
+    "columns-media-copy",
+    "cards-quicklinks"
+  ]
+}

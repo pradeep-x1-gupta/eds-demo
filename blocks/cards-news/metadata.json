@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-23T09:12:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/",
+    "originPage": "Kaiser Permanente homepage / landing-hub",
+    "blockPosition": "top",
+    "sourceComponent": "c05-column-control (c06-content-tile + c08-feature + c17-link-list)"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "news",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + cta",
+    "buttonCount": 1,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage / hub news mosaics",
+      "featured news + article list regions",
+      "promotional card grids with photos and CTAs"
+    ],
+    "notSuitableFor": [
+      "side-by-side media+copy callouts (use columns-media-copy)",
+      "plain tabular data",
+      "text-only quick-link tile grids (use cards-quicklinks)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index", "/news", "/who-we-are/labor-relations"],
+    "reuseCount": 3,
+    "lastUsed": "2026-08-23T11:20:00.000Z"
+  }
+}

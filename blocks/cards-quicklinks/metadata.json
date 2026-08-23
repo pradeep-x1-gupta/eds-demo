@@ -1,0 +1,43 @@
+{
+  "variantName": "cards-quicklinks",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-23T09:12:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/",
+    "originPage": "Kaiser Permanente homepage / landing-hub",
+    "blockPosition": "bottom",
+    "sourceComponent": "c05-column-control (c06-content-tile x3)"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "wide",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image/icon + heading + link",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "quick-link tile grids at the bottom of landing/hub pages",
+      "equal clickable navigation tiles with title overlays",
+      "3-up feature-tile rows (photo or solid-color background)"
+    ],
+    "notSuitableFor": [
+      "news mosaics with mixed prominence (use cards-news)",
+      "side-by-side media+copy callouts (use columns-media-copy)",
+      "data tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index",
+      "/who-we-are/our-history"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-23T09:45:00.000Z"
+  }
+}

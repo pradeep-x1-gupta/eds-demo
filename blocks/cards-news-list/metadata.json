@@ -1,0 +1,48 @@
+{
+  "variantName": "cards-news-list",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-23T09:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/news",
+    "originPage": "Kaiser Permanente News section-landing page",
+    "blockPosition": "bottom",
+    "sourceComponent": "c04-filtered-card-grid (filtered-card-grid__item x384)"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "news-list",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + date eyebrow + title + short copy (article link)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "chronological / filtered news listing grids",
+      "large uniform grids of dated article cards",
+      "press release archives and 'latest news' feeds",
+      "KP c04-filtered-card-grid sections"
+    ],
+    "notSuitableFor": [
+      "mixed-prominence promotional mosaics with a feature callout (use cards-news)",
+      "colored quick-link navigation tiles with title overlays (use cards-quicklinks)",
+      "side-by-side media+copy callouts (use columns-media-copy)",
+      "plain tabular data"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/news",
+      "/who-we-are/our-history",
+      "/news/medical-school-milestone",
+      "/expertise-and-impact/public-policy/our-impact"
+    ],
+    "reuseCount": 4,
+    "lastUsed": "2026-08-23T10:06:00.000Z"
+  },
+  "notes": "Uniform news-card grid variant. First paragraph in each card body is styled as an uppercase date eyebrow. Filter controls (Type/Location/Topic) on the source are progressive enhancement over a plain cards list; the authored content model is a standard cards list. Also reused for the article-page 'Related' band (c28-related-card-grid): the slick slider is progressive enhancement over the same uniform image+date+title+copy card model."
+}

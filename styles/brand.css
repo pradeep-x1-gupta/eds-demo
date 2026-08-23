@@ -1,0 +1,26 @@
+/*
+ * Kaiser Permanente brand tokens
+ * Extracted from about.kaiserpermanente.org
+ * Font: Gotham (proprietary) → Montserrat fallback (closest free geometric sans)
+ */
+:root {
+  /* brand colors */
+  --kp-navy: #0d1c3d;        /* headings / primary text */
+  --kp-blue: #006ba6;        /* links */
+  --kp-blue-bright: #0078b3; /* primary buttons / accents */
+  --kp-blue-deep: #003b71;   /* deep accent */
+  --kp-grey: #555;           /* secondary text */
+  --kp-grey-light: #f2f2f2;  /* light section band */
+
+  /* mapped EDS tokens */
+  --background-color: #fff;
+  --light-color: var(--kp-grey-light);
+  --dark-color: var(--kp-navy);
+  --text-color: var(--kp-navy);
+  --link-color: var(--kp-blue);
+  --link-hover-color: var(--kp-blue-deep);
+
+  /* fonts */
+  --body-font-family: gotham, montserrat, "Helvetica Neue", arial, sans-serif;
+  --heading-font-family: gotham, montserrat, "Helvetica Neue", arial, sans-serif;
+}

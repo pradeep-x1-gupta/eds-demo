@@ -1,0 +1,46 @@
+{
+  "variantName": "columns-media-copy",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-23T09:12:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/",
+    "originPage": "Kaiser Permanente homepage / landing-hub",
+    "blockPosition": "middle",
+    "sourceComponent": "c13-horizontal-media-with-copy"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "copy (heading + paragraph + cta) | image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured callouts with copy beside a single large image",
+      "annual-report / promotional highlight bands",
+      "KP c13-horizontal-media-with-copy sections",
+      "leadership/executive bio header bands (name + title beside a headshot on a grey band, KP c31-leadership-bio)"
+    ],
+    "notSuitableFor": [
+      "repeating card grids (use cards-news or cards-quicklinks)",
+      "3+ equal columns of items",
+      "data tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index",
+      "/who-we-are/our-history",
+      "/who-we-are/leadership-team/greg-a-adams",
+      "/expertise-and-impact/annual-reports/2024-annual-report"
+    ],
+    "reuseCount": 4,
+    "lastUsed": "2026-08-23T11:52:00.000Z"
+  }
+}

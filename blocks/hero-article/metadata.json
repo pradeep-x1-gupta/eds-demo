@@ -1,0 +1,44 @@
+{
+  "variantName": "hero-article",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-23T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.kaiserpermanente.org/news/medical-school-milestone",
+    "originPage": "Kaiser Permanente news article",
+    "blockPosition": "top",
+    "sourceComponent": "c27-article-page-hero"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "article-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "date eyebrow + heading + intro paragraph + image + caption",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news / article header bands",
+      "press release headers with date + title + lead + side image",
+      "editorial pages needing a two-up hero (text beside captioned image)"
+    ],
+    "notSuitableFor": [
+      "full-bleed background-image hero (use base hero)",
+      "landing/hub promotional hero with CTAs (use columns-media-copy or cards-news)",
+      "text-only page title bands with no image"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/news/medical-school-milestone",
+      "/expertise-and-impact/annual-reports/2024-annual-report/2024-year-in-summary"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-23T12:00:00.000Z"
+  },
+  "notes": "Two-up article hero (c27-article-page-hero). Text column: first bare paragraph before the H1 is styled as an uppercase date/eyebrow; H1 headline; intro paragraph. Media column: hero image plus an italic caption paragraph. Base vanilla hero is a full-bleed background hero; this variant reworks it into a side-by-side article header, so JS and CSS were rewritten rather than copied verbatim."
+}

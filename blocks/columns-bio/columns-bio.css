@@ -1,0 +1,55 @@
+/* columns-bio — leadership bio header (KP c31-leadership-bio) */
+
+.columns-bio > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-bio h1 {
+  margin: 0 0 8px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--kp-navy);
+}
+
+.columns-bio p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--kp-navy);
+}
+
+.columns-bio .columns-bio-img-col img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.columns-bio a {
+  color: var(--kp-blue);
+  text-decoration: none;
+}
+
+.columns-bio a:hover {
+  color: var(--kp-blue-deep);
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .columns-bio > div {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 48px;
+  }
+
+  .columns-bio > div > div {
+    flex: 1;
+  }
+
+  .columns-bio .columns-bio-img-col {
+    flex: 0 0 320px;
+  }
+}

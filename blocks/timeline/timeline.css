@@ -1,0 +1,101 @@
+/* Timeline block: chronological milestones on a central vertical spine. */
+
+.timeline .timeline-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 24px 0;
+  max-width: 960px;
+  position: relative;
+}
+
+/* The vertical spine down the center. */
+.timeline .timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--timeline-spine-color, #99a);
+}
+
+.timeline .timeline-item {
+  position: relative;
+  padding: 24px 0;
+}
+
+/* Year badge sitting on the spine. */
+.timeline .timeline-year {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: max-content;
+  min-width: 72px;
+  margin: 0 auto 24px;
+  padding: 6px 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background: var(--timeline-badge-color, #55247a);
+  border-radius: 2px;
+}
+
+/* Milestone card: media beside copy. */
+.timeline .timeline-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  width: 50%;
+}
+
+/* Alternate sides (zig-zag) on wider screens. */
+.timeline .timeline-item:nth-child(odd) .timeline-card {
+  margin-right: auto;
+  padding-right: 40px;
+}
+
+.timeline .timeline-item:nth-child(even) .timeline-card {
+  margin-left: auto;
+  padding-left: 40px;
+}
+
+.timeline .timeline-media {
+  flex: 1 1 100%;
+}
+
+.timeline .timeline-media img,
+.timeline .timeline-media picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.timeline .timeline-body h2 {
+  margin: 0 0 8px;
+  font-size: var(--heading-font-size-m, 1.5rem);
+}
+
+.timeline .timeline-body p {
+  margin: 0 0 12px;
+}
+
+/* Single-column stack on small screens: spine moves to the left. */
+@media (width <= 900px) {
+  .timeline .timeline-list::before {
+    left: 12px;
+  }
+
+  .timeline .timeline-year {
+    margin-left: 0;
+  }
+
+  .timeline .timeline-card,
+  .timeline .timeline-item:nth-child(odd) .timeline-card,
+  .timeline .timeline-item:nth-child(even) .timeline-card {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0 40px;
+  }
+}

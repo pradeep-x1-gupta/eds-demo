@@ -143,6 +143,41 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies section-metadata blocks as section classes / styles.
+ * The vendored scripts/aem.js decorateSections() does not process
+ * `section-metadata` blocks, so a `style` value (e.g. grey, dark) authored via
+ * section metadata never reaches the section as a class. This restores the
+ * standard EDS behavior: read each `.section-metadata` block's key/value rows,
+ * apply `style` values as classes on the parent section, and expose other keys
+ * as `data-*` attributes, then remove the metadata block.
+ * @param {Element} main The main element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > .section > div > .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    [...meta.children].forEach((row) => {
+      const cols = [...row.children];
+      if (cols.length >= 2) {
+        const key = cols[0].textContent.trim().toLowerCase();
+        const value = cols[1].textContent.trim();
+        if (key === 'style') {
+          value.split(',').forEach((s) => {
+            const cls = s.trim().toLowerCase().replace(/\s+/g, '-');
+            if (cls) section.classList.add(cls);
+          });
+        } else if (key) {
+          section.dataset[key.replace(/[^a-z0-9]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''))] = value;
+        }
+      }
+    });
+    // remove the metadata block (and its now-empty wrapper if applicable)
+    const wrapper = meta.parentElement;
+    meta.remove();
+    if (wrapper && wrapper.children.length === 0) wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -151,6 +186,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
