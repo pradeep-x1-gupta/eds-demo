@@ -38,6 +38,42 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
 }
 
 /**
+ * Moves the given attributes from one element to another.
+ * @param {Element} from The element to move attributes from
+ * @param {Element} to The element to move attributes to
+ * @param {string[]} [attributes] The list of attribute names to move; when
+ *   omitted, every attribute on `from` is moved.
+ */
+export function moveAttributes(from, to, attributes) {
+  const attrs = attributes || [...from.attributes].map(({ nodeName }) => nodeName);
+  attrs.forEach((attr) => {
+    const value = from.getAttribute(attr);
+    if (value) {
+      to.setAttribute(attr, value);
+      from.removeAttribute(attr);
+    }
+  });
+}
+
+/**
+ * Moves Universal Editor instrumentation attributes from one element to another.
+ * Blocks that rebuild their DOM (replacing authored rows with new elements) must
+ * carry these `data-aue-*` / `data-richtext-*` attributes across, or in-context
+ * editing breaks on the rebuilt element.
+ * @param {Element} from The element to move instrumentation from
+ * @param {Element} to The element to move instrumentation to
+ */
+export function moveInstrumentation(from, to) {
+  moveAttributes(
+    from,
+    to,
+    [...from.attributes]
+      .map(({ nodeName }) => nodeName)
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
+  );
+}
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {

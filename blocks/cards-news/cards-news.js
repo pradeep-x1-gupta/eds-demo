@@ -8,6 +8,8 @@
  * Classification is content-driven so the block degrades gracefully when reused.
  */
 
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 function contentCell(row) {
   const cells = [...row.children];
   return cells.find((c) => c.children.length || c.textContent.trim()) || cells[cells.length - 1];
@@ -64,6 +66,7 @@ export default function decorate(block) {
       const { href, text } = linkOf(h3);
       const item = document.createElement('a');
       item.className = 'cards-news-item';
+      moveInstrumentation(row, item);
       if (href) item.href = href;
       const date = document.createElement('span');
       date.className = 'cards-news-date';
@@ -78,6 +81,7 @@ export default function decorate(block) {
       const { href, text } = linkOf(h3);
       const tile = document.createElement('a');
       tile.className = 'cards-news-tile';
+      moveInstrumentation(row, tile);
       if (href) tile.href = href;
       const title = document.createElement('span');
       title.className = 'cards-news-tile-title';
