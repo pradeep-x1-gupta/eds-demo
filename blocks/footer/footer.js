@@ -6,11 +6,13 @@ import { loadFragment } from '../fragment/fragment.js';
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  // load footer as fragment
+  // load footer as fragment. Default to the site-root path '/footer' (works on
+  // the deployed DA site and locally via `aem up`). Fall back to
+  // '/content/footer' only for local dev when the repo's content folder isn't
+  // served at root.
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
   let fragment = await loadFragment(footerPath);
-  // fallback for local dev where content is served under /content
   if (!fragment && footerPath !== '/content/footer') {
     fragment = await loadFragment('/content/footer');
   }

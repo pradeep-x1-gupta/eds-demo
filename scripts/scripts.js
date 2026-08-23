@@ -178,6 +178,25 @@ function decorateSectionMetadata(main) {
 }
 
 /**
+ * Tags the leading breadcrumb trail so it can be styled as a horizontal
+ * breadcrumb rather than a default numbered list. The trail is imported as the
+ * first list in the page whose first item links to the site root ("Home").
+ * @param {Element} main The main element
+ */
+function decorateBreadcrumb(main) {
+  const list = main.querySelector(':scope > div ol, :scope > div ul');
+  if (!list) return;
+  const firstLink = list.querySelector('li:first-child a');
+  if (!firstLink) return;
+  const href = firstLink.getAttribute('href') || '';
+  if (href !== '/' && !/^https?:\/\/[^/]+\/?$/.test(href)) return;
+  if (firstLink.textContent.trim().toLowerCase() !== 'home') return;
+  list.classList.add('breadcrumb');
+  const wrapper = list.closest('.default-content-wrapper') || list.parentElement;
+  if (wrapper) wrapper.classList.add('breadcrumb-wrapper');
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -187,6 +206,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
+  decorateBreadcrumb(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

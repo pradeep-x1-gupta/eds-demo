@@ -113,11 +113,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment. Default to the site-root path '/nav' (works on the
+  // deployed DA site and locally via `aem up`). Fall back to '/content/nav'
+  // only for local dev when the repo's content folder isn't served at root.
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   let fragment = await loadFragment(navPath);
-  // fallback for local dev where content is served under /content
   if (!fragment && navPath !== '/content/nav') {
     fragment = await loadFragment('/content/nav');
   }

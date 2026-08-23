@@ -323,3 +323,36 @@ main .section.dark h2,
 main .section.dark h3 {
   color: #fff;
 }
+
+/* breadcrumb (leading Home > Section > Page trail) */
+main .breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: var(--body-font-size-xs);
+}
+
+main .breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  color: var(--kp-grey);
+}
+
+main .breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin: 0 8px;
+  color: #bbb;
+}
+
+main .breadcrumb a:any-link {
+  color: var(--kp-blue);
+  text-decoration: none;
+}
+
+main .breadcrumb a:hover {
+  text-decoration: underline;
+}
